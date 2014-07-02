@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" type="text/css" href="../Sharor/css/uikit.almost-flat.css">
+        <link rel="stylesheet" type="text/css" href="../Sharor/css/customize.css">
+
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script type="text/javascript">
+
+			function DropDown(el) {
+				this.dd = el;
+				this.placeholder = this.dd.children('span');
+				this.opts = this.dd.find('ul.dropdown > li');
+				this.val = '';
+				this.index = -1;
+				this.initEvents();
+			}
+			DropDown.prototype = {
+				initEvents : function() {
+					var obj = this;
+
+					obj.dd.on('click', function(event){
+						$(this).toggleClass('active');
+						return false;
+					});
+
+					obj.opts.on('click',function(){
+						var opt = $(this);
+						obj.val = opt.text();
+						obj.index = opt.index();
+						obj.placeholder.text(obj.val);
+					});
+				},
+				getValue : function() {
+					return this.val;
+				},
+				getIndex : function() {
+					return this.index;
+				}
+			}
+
+			$(function() {
+
+				var dd = new DropDown( $('#dd') );
+
+				$(document).click(function() {
+					// all dropdowns
+					$('.wrapper-dropdown-3').removeClass('active');
+				});
+
+			});
+
+
+		</script>
+    </head>
+
+
+    <body>
+
+        <div class="uk-grid">
+            <div class="uk-menu-home-tab">
+               <div class="uk-width-large-1-1">
+                   <div class="uk-menu">
+                   Menu
+                   </div>
+
+
+
+                   <div class="uk-search">
+
+                      <form>
+                        <input type="search" placeholder="Search">
+                    </form>
+
+                   </div>
+
+
+                   <!--div class="uk-btn-login">
+                       <button class="uk-button" type="button">Username</button>
+
+                   </div-->
+                    <div class="uk-btn-login">
+                        <button class="wrapper-dropdown" type="button">Join</button>
+                   </div>
+
+
+                 <div class="uk-btn-login">
+
+                   <div id="dd" class="wrapper-dropdown-3" tabindex="1">
+                        <span>Login</span>
+                        <ul class="dropdown">
+                            <li><a href="#"><i class="icon-envelope icon-large"></i>Facebook</a></li>
+                            <li><a href="#"><i class="icon-truck icon-large"></i>Twitter</a></li>
+                            <li><a href="#"><i class="icon-plane icon-large"></i>Email</a></li>
+                        </ul>
+                   </div>
+
+
+                   </div>
+
+
+
+
+
+                   <div class="uk-space">
+                   </div>
+
+                   <hr/>
+
+                    <div class="uk-selected-topic">
+                       Topic
+                    </div>
+                    <div class="uk-selected-topic">
+                       Topic
+                   </div>
+                   <div class="uk-btn-topic">
+                       <button class="uk-button" type="button">Topic</button>
+                   </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="uk-choose-topic">
+
+            <div class="uk-grid">
+                <div class="uk-width-1-5">
+                    <div class="uk-panel">
+                        <div class="uk-panel-box">
+                           <div class="uk-panel-teaser">
+                                <img src="img/placeholder.svg"  alt="">
+                           </div>
+                            <p>Popular</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="uk-width-1-5">
+                    <div class="uk-panel">
+                        <div class="uk-panel-box">
+                           <div class="uk-panel-teaser">
+                                <img src="img/placeholder.svg"  alt="">
+                           </div>
+                            <p>Blogs</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="uk-width-1-5">
+                    <div class="uk-panel">
+                        <div class="uk-panel-box">
+                           <div class="uk-panel-teaser">
+                                <img src="img/placeholder.svg"  alt="">
+                           </div>
+                            <p>Poll</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="uk-width-1-5">
+                    <div class="uk-panel">
+                        <div class="uk-panel-box">
+                           <div class="uk-panel-teaser">
+                                <img src="img/placeholder.svg"  alt="">
+                           </div>
+                            <p>Quiz</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="uk-width-1-5">
+                    <div class="uk-panel">
+                        <div class="uk-panel-box">
+                           <div class="uk-panel-teaser">
+                                <img src="img/placeholder.svg"  alt="">
+                           </div>
+                            <p>Contest</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="uk-grid">
+                <div class="uk-width-1-5">
+                    <div class="uk-panel">
+                        <div class="uk-panel-box">
+                           <div class="uk-panel-teaser">
+                                <img src="img/placeholder.svg"  alt="">
+                           </div>
+                            <p>Business</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="uk-width-1-5">
+                    <div class="uk-panel">
+                        <div class="uk-panel-box">
+                           <div class="uk-panel-teaser">
+                                <img src="img/placeholder.svg"  alt="">
+                           </div>
+                            <p>Teen</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="uk-width-1-5">
+                    <div class="uk-panel">
+                        <div class="uk-panel-box">
+                           <div class="uk-panel-teaser">
+                                <img src="img/placeholder.svg"  alt="">
+                           </div>
+                            <p>Fashion</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="uk-width-1-5">
+                    <div class="uk-panel">
+                        <div class="uk-panel-box">
+                           <div class="uk-panel-teaser">
+                                <img src="img/placeholder.svg"  alt="">
+                           </div>
+                            <p>Beauty</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="uk-width-1-5">
+                    <div class="uk-panel">
+                        <div class="uk-panel-box">
+                           <div class="uk-panel-teaser">
+                                <img src="img/placeholder.svg"  alt="">
+                           </div>
+                            <p>Football</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="uk-grid">
+                <div class="uk-width-1-5">
+                    <div class="uk-panel">
+                        <div class="uk-panel-box">
+                           <div class="uk-panel-teaser">
+                                <img src="img/placeholder.svg"  alt="">
+                           </div>
+                            <p>Travel</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="uk-width-1-5">
+                    <div class="uk-panel">
+                        <div class="uk-panel-box">
+                           <div class="uk-panel-teaser">
+                                <img src="img/placeholder.svg"  alt="">
+                           </div>
+                            <p>Entertainment</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="uk-width-1-5">
+                    <div class="uk-panel">
+                        <div class="uk-panel-box">
+                           <div class="uk-panel-teaser">
+                                <img src="img/placeholder.svg"  alt="">
+                           </div>
+                            <p>Health &amp; Fitness</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="uk-width-1-5">
+                    <div class="uk-panel">
+                        <div class="uk-panel-box">
+                           <div class="uk-panel-teaser">
+                                <img src="img/placeholder.svg"  alt="">
+                           </div>
+                            <p>Celebrity</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="uk-width-1-5">
+                    <div class="uk-panel">
+                        <div class="uk-panel-box">
+                           <div class="uk-panel-teaser">
+                                <img src="img/placeholder.svg"  alt="">
+                           </div>
+                            <p>Other</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+        </div>
+
+
+    </body>
+
+    <Footer>
+        <div class="uk-footer-link">
+            test
+        </div>
+    </Footer>
+
+</html>
